@@ -3,8 +3,11 @@ project(legged_mujoco)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-set(LCM_INCLUDE_DIRS "/usr/local/lcm")
-set(LCM_LIBRARIES "/usr/local/lib/liblcm.so")
+# set(LCM_INCLUDE_DIRS "/usr/local/lcm")
+# set(LCM_LIBRARIES "/usr/local/lib/liblcm.so")
+# find LCM by pkgconfig
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(LCM REQUIRED lcm)
 
 find_package(catkin REQUIRED
         COMPONENTS

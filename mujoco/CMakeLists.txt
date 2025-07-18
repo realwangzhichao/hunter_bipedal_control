@@ -18,8 +18,11 @@ endif()
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 
-set(LCM_INCLUDE_DIRS "/usr/local/lcm")
-set(LCM_LIBRARIES "/usr/local/lib/liblcm.so")
+# set(LCM_INCLUDE_DIRS "/usr/local/lcm")
+# set(LCM_LIBRARIES "/usr/local/lib/liblcm.so")
+# find LCM by pkgconfig
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(LCM REQUIRED lcm)
 
 find_package(catkin REQUIRED
         COMPONENTS

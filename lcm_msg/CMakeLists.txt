@@ -12,7 +12,10 @@ find_package(catkin REQUIRED)
 # set(LCM_INCLUDE_DIRS "/usr/local/lcm")
 # set(LCM_LIBRARIES "/usr/local/lib/liblcm.so")
 
-find_package(lcm REQUIRED)
+# find_package(lcm REQUIRED)
+# find LCM by pkgconfig
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(LCM REQUIRED lcm)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
